@@ -28,19 +28,36 @@ class DynamicArray {
   // adds the item to the end of the array, copying it to a new FixedArray if
   // necessary. There is no need to return anything.
   push(item) {
+    if (this.length === this.array.length) {
+      const newArray = new FixedArray(this.length * 2);
 
+      for (let i = 0; i < this.array; i++) {
+        newArr.set(i, this.array.get(i));
+      }
+
+      this.arr === newArr;
+    }
+
+      this.array.set(this.length, item);
+      this.length += 1;
   }
 
   // Implement a method pop that does not take in any arguments. It delete the
   // item at the end of the array.
   pop() {
-
+    this.array.set(this.length - 1, undefined);
+    this.length -= 1;
   }
 
   // Implement a method del that takes in one argument, index (a number), it
   // deletes the item at that index. There is no need to return anything.
   del(index) {
+    for (let i = index; i < this.length - 1; i++) {
+      this.array.set(i, this.array.get(i + 1));
+    }
 
+    this.array.set(this.length - 1, undefined);
+    this.length -= 1;
   }
 }
 

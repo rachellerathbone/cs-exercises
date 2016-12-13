@@ -4,14 +4,14 @@ const expect = require("chai").expect
 const DynamicArray = require('../../arrays/dynamic_array');
 
 describe("DynamicArray#Push", () => {
-  xit('Returns an array that initializes a fixed array with double the length', () => {
+  it('Returns an array that initializes a fixed array with double the length', () => {
     const da = new DynamicArray(3);
 
     expect(da.length).to.be.equal(3);
     expect(da.array.length).to.be.equal(6);
   });
 
-  xit('Updates the array with length + 1', () => {
+  it('Updates the array with length + 1', () => {
     const da = new DynamicArray(3);
 
     da.set(0, 1);   // Set value 1 at index 0
@@ -23,7 +23,7 @@ describe("DynamicArray#Push", () => {
     expect(da.length).to.be.equal(4);
   });
 
-  xit('Updates the array with item added', () => {
+  it('Updates the array with item added', () => {
     const da = new DynamicArray(3);
 
     da.set(0, 1);   // Set value 1 at index 0
@@ -37,7 +37,7 @@ describe("DynamicArray#Push", () => {
 });
 
 describe("DynamicArray#Pop", () => {
-  xit('Updates the array with length - 1', () => {
+  it('Updates the array with length - 1', () => {
     const da = new DynamicArray(3);
 
     da.set(0, 1);   // Set value 1 at index 0
@@ -49,7 +49,7 @@ describe("DynamicArray#Pop", () => {
     expect(da.length).to.be.equal(2);
   });
 
-  xit('Returns an array item removed', () => {
+  it('Returns an array item removed', () => {
     const da = new DynamicArray(3);
 
     da.set(0, 1);   // Set value 1 at index 0
@@ -64,7 +64,7 @@ describe("DynamicArray#Pop", () => {
 });
 
 describe("DynamicArray#Del", () => {
-  xit('Updates the array with length - 1', () => {
+  it('Updates the array with length - 1', () => {
     const da = new DynamicArray(3);
 
     da.set(0, 1);   // Set value 1 at index 0
@@ -76,7 +76,7 @@ describe("DynamicArray#Del", () => {
     expect(da.length).to.be.equal(2);
   });
 
-  xit('Returns an array item removed', () => {
+  it('Returns an array item removed', () => {
     const da = new DynamicArray(3);
 
     da.set(0, 1);   // Set value 1 at index 0
