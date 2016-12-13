@@ -5,7 +5,7 @@ const FixedArray = require('../../arrays/fixed_array');
 const { arrayPush, arrayDelete } = require('../../arrays/static_array');
 
 describe("#arrayPush", () => {
-  it('Returns an array of instance FixedArray', () => {
+  xit('Returns an array of instance FixedArray', () => {
     const fa = new FixedArray(3);
 
     fa.set(0, 1);   // Set value 1 at index 0
@@ -17,7 +17,7 @@ describe("#arrayPush", () => {
     expect(newFa instanceof FixedArray).to.be.equal(true)
   });
 
-  it('Returns an array with length + 1', () => {
+  xit('Returns an array with length + 1', () => {
     const fa = new FixedArray(3);
 
     fa.set(0, 1);   // Set value 1 at index 0
@@ -29,7 +29,7 @@ describe("#arrayPush", () => {
     expect(newFa.length).to.be.equal(4)
   });
 
-  it('Returns an array item added', () => {
+  xit('Returns an array item added', () => {
     const fa = new FixedArray(3);
 
     fa.set(0, 1);   // Set value 1 at index 0
@@ -43,7 +43,7 @@ describe("#arrayPush", () => {
 });
 
 describe("#arrayDelete", () => {
-  it('Returns an array of instance FixedArray', () => {
+  xit('Returns an array of instance FixedArray', () => {
     const fa = new FixedArray(3);
 
     fa.set(0, 1);   // Set value 1 at index 0
@@ -55,7 +55,7 @@ describe("#arrayDelete", () => {
     expect(newFa instanceof FixedArray).to.be.equal(true);
   });
 
-  it('Returns an array with length - 1', () => {
+  xit('Returns an array with length - 1', () => {
     const fa = new FixedArray(3);
 
     fa.set(0, 1);   // Set value 1 at index 0
@@ -67,7 +67,7 @@ describe("#arrayDelete", () => {
     expect(newFa.length).to.be.equal(2);
   });
 
-  it('Returns an array without item', () => {
+  xit('Returns an array without item', () => {
     const fa = new FixedArray(3);
 
     fa.set(0, 1);   // Set value 1 at index 0
