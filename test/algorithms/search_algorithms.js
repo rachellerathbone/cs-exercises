@@ -7,7 +7,6 @@ const negativeArr = [-5,-4,-3,-2,-1];
 const decimalArr = [1.1,2.4,5.5,5.6,5.7];
 
 describe("#linearSearch", function(){
-
   it("does not use indexOf", function() {
     expect(lib.linearSearch.toString()).to.not.contain('indexOf');
   });
