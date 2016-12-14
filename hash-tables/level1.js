@@ -30,7 +30,13 @@ const LANG_LIST = {
 }
 
 const greet = (language) => {
+  language = language.toLowerCase();
 
+  if(!LANG_LIST[language]) {
+    return 'Welcome a Miami.';
+  }
+
+  return (LANG_LIST[language] + ' a Miami.');
 }
 
 
@@ -46,7 +52,20 @@ i.e. [1, 'z', 'bob', true, 42, 'bob'] => { '1': 0, 'z': 1, 'bob': '5', 'true': 3
 */
 
 const removeDupes = (numArr) => {
+  let new_obj = {};
 
+  if (numArr.length === 0) {
+    return {};
+  } else {
+    let hashObj = Object.assign({}, numArr);
+    for(var prop in hashObj) {
+      if(hashObj.hasOwnProperty(prop)) {
+        new_obj[hashObj[prop]] = Number(prop);
+      }
+    }
+
+    return new_obj;
+  }
 }
 
 
@@ -61,7 +80,19 @@ i.e. { 'foo': 6, 'bar': 3, 'baz': 'bob', 13: 13 } => { 'bar': 3, '13': 13 }
 */
 
 const onlyOdds = (mixedHash) => {
+  // if (Object.keys(mixedHash).length === 0) {
+  //   return {};
+  // }
 
+  let newObj = {};
+
+  for(let key in mixedHash) {
+    if(mixedHash[key] % 2 === 1) {
+      newObj[key] = mixedHash[key];
+    }
+  }
+
+  return newObj;
 };
 
 /*
@@ -75,7 +106,10 @@ i.e. "hello" => { h: 1, e: 1, l: 2, o: 1 }
 */
 
 const charCount = (word) => {
+  let obj = {};
 
+
+  return obj;
 };
 
 module.exports = { greet, removeDupes, onlyOdds, charCount };

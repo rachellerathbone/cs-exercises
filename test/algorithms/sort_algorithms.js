@@ -8,7 +8,7 @@ describe('Part 1', function() {
 
     let swap = require('../../algorithms/sort_algorithms').swap;
 
-    xit('swaps two elements in an array', function() {
+    it('swaps two elements in an array', function() {
       let arr = [6, 7, 4, 3, 1];
       swap(arr, 1, 4);
       expect(arr).to.deep.equal([6, 1, 4, 3, 7]);
@@ -20,19 +20,19 @@ describe('Part 1', function() {
 
     let bubbleSort = require('../../algorithms/sort_algorithms').bubbleSort;
 
-    xit('sorts an array of positive numbers', function(){
+    it('sorts an array of positive numbers', function(){
       expect(bubbleSort([3.1,4.5,1,2,5])).to.deep.equal([1,2,3.1,4.5,5]);
     });
 
-    xit('sorts an array of negative numbers', function(){
+    it('sorts an array of negative numbers', function(){
       expect(bubbleSort([-4,-9,-2,-8,-2,0])).to.deep.equal([-9,-8,-4,-2,-2,0]);
     });
 
-    xit('sorts an array of positive and negative numbers', function(){
+    it('sorts an array of positive and negative numbers', function(){
       expect(bubbleSort([-3,4,1,-9,22])).to.deep.equal([-9,-3,1,4,22]);
     });
 
-    xit('works with arrays that are already sorted', function(){
+    it('works with arrays that are already sorted', function(){
       expect(bubbleSort([1,2,3,4,5])).to.deep.equal([1,2,3,4,5]);
     });
 
@@ -42,19 +42,19 @@ describe('Part 1', function() {
 
     let selectionSort = require('../../algorithms/sort_algorithms').selectionSort;
 
-    xit('sorts an array of positive numbers', function(){
+    it('sorts an array of positive numbers', function(){
       expect(selectionSort([3.1,4.5,1,2,5])).to.deep.equal([1,2,3.1,4.5,5]);
     });
 
-    xit('sorts an array of negative numbers', function(){
+    it('sorts an array of negative numbers', function(){
       expect(selectionSort([-4,-9,-2,-8,-2,0])).to.deep.equal([-9,-8,-4,-2,-2,0]);
     });
 
-    xit('sorts an array of positive and negative numbers', function(){
+    it('sorts an array of positive and negative numbers', function(){
       expect(selectionSort([-3,4,1,-9,22])).to.deep.equal([-9,-3,1,4,22]);
     });
 
-    xit('works with arrays that are already sorted', function(){
+    it('works with arrays that are already sorted', function(){
       expect(selectionSort([1,2,3,4,5])).to.deep.equal([1,2,3,4,5]);
     });
 
@@ -64,19 +64,19 @@ describe('Part 1', function() {
 
     let insertionSort = require('../../algorithms/sort_algorithms').insertionSort;
 
-    xit('sorts an array of positive numbers', function(){
+    it('sorts an array of positive numbers', function(){
       expect(insertionSort([3.1,4.5,1,2,5])).to.deep.equal([1,2,3.1,4.5,5]);
     });
 
-    xit('sorts an array of negative numbers', function(){
+    it('sorts an array of negative numbers', function(){
       expect(insertionSort([-4,-9,-2,-8,-2,0])).to.deep.equal([-9,-8,-4,-2,-2,0]);
     });
 
-    xit('sorts an array of positive and negative numbers', function(){
+    it('sorts an array of positive and negative numbers', function(){
       expect(insertionSort([-3,4,1,-9,22])).to.deep.equal([-9,-3,1,4,22]);
     });
 
-    xit('works with arrays that are already sorted', function(){
+    it('works with arrays that are already sorted', function(){
       expect(insertionSort([1,2,3,4,5])).to.deep.equal([1,2,3,4,5]);
     });
 
