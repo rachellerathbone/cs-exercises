@@ -106,8 +106,13 @@ i.e. "hello" => { h: 1, e: 1, l: 2, o: 1 }
 */
 
 const charCount = (word) => {
+  word = word.toLowerCase();
+
   let obj = {};
 
+  word.split('').forEach((element) => {
+    obj[element] ? obj[element]++ : obj[element] = 1;
+  });
 
   return obj;
 };

@@ -54,15 +54,15 @@ describe('Hash Table', () => {
         level1.charCount('').should.eql({});
       });
 
-      xit('should return an {} with keys for each char in a word with no dupe chars, and values for their count', () => {
+      it('should return an {} with keys for each char in a word with no dupe chars, and values for their count', () => {
         level1.charCount('red').should.eql({r: 1, e: 1, d: 1});
       });
 
-      xit('should return an {} with keys for each char in a word with dupe chars, and values for their count', () => {
+      it('should return an {} with keys for each char in a word with dupe chars, and values for their count', () => {
         level1.charCount('wallless').should.eql({w: 1, a: 1, l: 3, e: 1, s: 2});
       });
 
-      xit('should not care about case', () => {
+      it('should not care about case', () => {
         level1.charCount('Bob').should.eql({b: 2, o: 1});
       });
     });
@@ -70,29 +70,29 @@ describe('Hash Table', () => {
 
   describe('Level Two', () => {
     suite('#reverseMerge', () => {
-      xit('should return an empty array if both input arrays are empty', () => {
+      it('should return an empty array if both input arrays are empty', () => {
         level2.reverseMerge([], []).should.eql({});
       });
 
-      xit('should be able to merge if both inputs have only a single value', () => {
+      it('should be able to merge if both inputs have only a single value', () => {
         level2.reverseMerge(['one'], [1]).should.eql({'one': 1});
       });
 
-      xit('should be able to handle merges for larger arrays of the same size', () => {
+      it('should be able to handle merges for larger arrays of the same size', () => {
         const keyArr = ['a', 'b', 'c', 'd'];
         const valArr = [1, 2, 3, 4];
 
         level2.reverseMerge(keyArr, valArr).should.eql({'a': 4, 'b': 3, 'c': 2, 'd': 1});
       });
 
-      xit('should use int 42 as value if valArr is smaller than keyArr', () => {
+      it('should use int 42 as value if valArr is smaller than keyArr', () => {
         const keyArr = ['a', 'b', 'c', 'd', 'e', 'f'];
         const valArr = [1, 2, 3, 4];
 
         level2.reverseMerge(keyArr, valArr).should.eql({'a': 42, 'b': 42, 'c': 4, 'd': 3, 'e': 2, 'f': 1});
       });
 
-      xit('should use "foo" as value if keyArr is smaller than valArr', () => {
+      it('should use "foo" as value if keyArr is smaller than valArr', () => {
         const keyArr = ['a', 'b', 'c', 'd'];
         const valArr = [1, 2, 3, 4, 5, 6, 7, 8];
         const output = {'a': 8, 'b': 7, 'c': 6, 'd': 5, 'foo': [4, 3, 2, 1]}
@@ -102,22 +102,26 @@ describe('Hash Table', () => {
     });
 
     suite('#mostUsedWord', () => {
-      xit('should return an {} with the most used character and its occurances as a key-value pair', () => {
+      it('should return an {} with the most used character and its occurances as a key-value pair', () => {
         level2.mostUsedWord("fox found fixing xylophones he found fun").should.be.eql({found: 2});
       });
 
-      xit('should not care about case', () => {
+      it('should not care about case', () => {
         level2.mostUsedWord('Bob dob lob bob sob nob').should.eql({bob: 2});
       });
     });
 
     suite('#isAnagram', () => {
-      xit('should return true for the strings "creative" & "reactive"', () => {
+      it('should return true for the strings "creative" & "reactive"', () => {
         level2.isAnagram('creative', 'reactive').should.be.true;
       });
 
-      xit('should return false for the strings "race" & "case"', () => {
+      it('should return false for the strings "race" & "case"', () => {
         level2.isAnagram('race', 'case').should.be.false;
+      });
+      
+      it('should return false for the strings that are not the same length', () => {
+        level2.isAnagram('race', 'cases').should.be.false;
       });
     });
   });
