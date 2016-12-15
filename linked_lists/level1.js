@@ -1,10 +1,3 @@
-// A Linked List is one of:
-//  - null
-//  - {
-//    value: ANYTHING,
-//    next: Linked List
-//  }
-
 // Write a function named count that takes in one argument:
 //  list - a Linked List
 // The function returns the number of elements in the list.
