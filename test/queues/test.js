@@ -2,7 +2,7 @@ const expect = require("chai").expect;
 const Queue = require('../../queues/queue');
 
 describe("#enqueue", () => {
-  xit('Properly enqueues an item', () => {
+  it('Properly enqueues an item', () => {
     const queue = new Queue();
 
     queue.enqueue(1);

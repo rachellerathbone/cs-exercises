@@ -90,21 +90,19 @@ The value will the the number of occurances of that word in the string.
 const mostUsedWord = (sentence) => {
   let result = { };
   let newObj = {};
-  let words = sentence.split(/\b/);
+  let words = sentence.split(/\s+/);
 
   for(let i = 0; i < words.length; i++)
-    result["_" + words[i].toLowerCase()] =
-      (result["_" + words[i]] || 0) + 1;
+      result[words[i].toLowerCase()] =
+      (result[words[i]] || 0) + 1;
 
     for(let key in result) {
       if(result[key] > 1) {
         newObj[key] = result[key];
       }
     }
-
   return newObj;
 }
-
 /*
 
 Write a function, isAnagram.

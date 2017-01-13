@@ -90,7 +90,7 @@ describe('Part 2', function() {
 
     let merge = require('../../algorithms/sort_algorithms').merge;
 
-    xit('merges two sorted arrays into a new array', function() {
+    it('merges two sorted arrays into a new array', function() {
       expect(merge([1,3,5,7],[2,4,6,8])).to.deep.equal([1,2,3,4,5,6,7,8]);
       expect(merge([1,2,3,4],[5,6,7,8])).to.deep.equal([1,2,3,4,5,6,7,8]);
       expect(merge([2,5,7,8],[1,3,9,10])).to.deep.equal([1,2,3,5,7,8,9,10]);
