@@ -1,6 +1,6 @@
 'use strict'
 
-const linearSearch = function(array, value) {
+function linearSearch(array, value) {
   for (let i = 0; i < array.length; i++) {
     if (array[i] === value) {
       return i;
@@ -10,7 +10,7 @@ const linearSearch = function(array, value) {
   return -1;
 }
 
-const binarySearch = function(array, value) {
+function binarySearch(array, value) {
   let low  = 0,
       high = array.length - 1,
       mid;
@@ -25,8 +25,8 @@ const binarySearch = function(array, value) {
     } else {
       high = mid - 1;
     }
-
   }
+
   return - 1;
 }
 

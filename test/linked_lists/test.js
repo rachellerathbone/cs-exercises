@@ -78,14 +78,14 @@ describe('LinkedList', () => {
 
   describe('Level Two', () => {
     describe("#InsertInBack", () => {
-      xit('Inserts an item to the end of an empty linked list', () => {
+      it('Inserts an item to the end of an empty linked list', () => {
         expect(level2.insertInBack(4, buildList(0))).to.be.eql({
           value: 4,
           next: null
         });
       });
 
-      xit('Inserts an item to the end of a non-empty linked list', () => {
+      it('Inserts an item to the end of a non-empty linked list', () => {
         expect(level2.insertInBack(4, buildList(3))).to.be.eql({
           value: 3,
           next: {
@@ -103,11 +103,11 @@ describe('LinkedList', () => {
     });
 
     describe("#RemoveNodeAtIndex", () => {
-      xit('Removes a node at a certain index for an empty linked list', () => {
+      it('Removes a node at a certain index for an empty linked list', () => {
         expect(level2.removeNodeAtIndex(buildList(0), 1)).to.be.equal(null);
       });
 
-      xit('Inserts an item to the end of a non-empty linked list', () => {
+      it('Inserts an item to the end of a non-empty linked list', () => {
         expect(level2.removeNodeAtIndex(buildList(3), 1)).to.be.eql({
           value: 3,
           next: {

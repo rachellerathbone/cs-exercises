@@ -58,7 +58,7 @@ const removeDupes = (numArr) => {
     return {};
   } else {
     let hashObj = Object.assign({}, numArr);
-    for(var prop in hashObj) {
+    for(let prop in hashObj) {
       if(hashObj.hasOwnProperty(prop)) {
         new_obj[hashObj[prop]] = Number(prop);
       }
@@ -80,10 +80,6 @@ i.e. { 'foo': 6, 'bar': 3, 'baz': 'bob', 13: 13 } => { 'bar': 3, '13': 13 }
 */
 
 const onlyOdds = (mixedHash) => {
-  // if (Object.keys(mixedHash).length === 0) {
-  //   return {};
-  // }
-
   let newObj = {};
 
   for(let key in mixedHash) {

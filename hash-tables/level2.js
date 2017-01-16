@@ -24,13 +24,15 @@ const reverseMerge = (keyArr, valArr) => {
   let valLength = valArr.length;
 
   if (keyLength < 1 && valLength < 1) {
+
     return newObj;
   } else if (keyLength === 1 && valLength === 1) {
     newObj[keyArr[0]] = valArr[0];
+
     return newObj;
   } else if (valLength < keyLength) {
-    while (keyLength !== valLength) {
-      for (let i = 0; i < keyLength; i++) {
+    while(keyLength !== valLength) {
+      for(let i = 0; i < keyLength; i++) {
         if (keyLength === valLength) {
           continue;
         }
@@ -46,12 +48,12 @@ const reverseMerge = (keyArr, valArr) => {
     }
 
     return newObj;
-  } else if (keyLength < valLength) {
-    let fooArr = [];
+  } else if(keyLength < valLength) {
+    let newArr = [];
 
-    while (valLength !== keyLength) {
-      for (let x = 0; x < valLength; x++) {
-         if (valLength === keyLength) {
+    while(valLength !== keyLength) {
+      for(let x = 0; x < valLength; x++) {
+         if(valLength === keyLength) {
           break;
         }
 
@@ -62,15 +64,16 @@ const reverseMerge = (keyArr, valArr) => {
       }
     }
 
-    for (let y = (valArr.length / 2) - 1; y >= 0; y--) {
-      fooArr.push(valArr[y]);
+    for(let y = (valArr.length / 2) - 1; y >= 0; y--) {
+      newArr.push(valArr[y]);
     }
 
-    newObj['foo'] = fooArr;
+    newObj['foo'] = newArr;
+
     return newObj;
   }
 
-  for (let a = 0; a < keyLength; a++) {
+  for(let a = 0; a < keyLength; a++) {
     newObj[keyArr[a]] = valArr[valLength - (a + 1)];
   }
 
@@ -88,7 +91,7 @@ The value will the the number of occurances of that word in the string.
 */
 
 const mostUsedWord = (sentence) => {
-  let result = { };
+  let result = {};
   let newObj = {};
   let words = sentence.split(/\s+/);
 
@@ -101,6 +104,7 @@ const mostUsedWord = (sentence) => {
         newObj[key] = result[key];
       }
     }
+
   return newObj;
 }
 /*
@@ -114,14 +118,14 @@ It returns TRUE if the words are anagrams of one another and FALSE if it is not.
 const isAnagram = (test, original) => {
   let arr = [];
 
-  for (let i = 0; i < test.length; i++) {
-    const index = test.charCodeAt(i)-97;
+  for(let i = 0; i < test.length; i++) {
+    const index = test.charCodeAt(i) - 97;
     arr[index] = (arr[index] || 0) + 1;
   }
 
-  for (let i = 0; i < original.length; i++) {
-    let index = (original.charCodeAt(i)-97);
-    if (!arr[index]) {
+  for(let i = 0; i < original.length; i++) {
+    let index = (original.charCodeAt(i) - 97);
+    if(!arr[index]) {
       return false;
     }
       arr[index]--;

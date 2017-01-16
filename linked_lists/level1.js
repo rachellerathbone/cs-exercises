@@ -2,27 +2,28 @@
 //  list - a Linked List
 
 // recursive version -> looks cleaner
-// function count(list) {
-//   if(list === null) {
-//     return 0;
-//   } else {
-//     return 1 + count(list.next);
-//   }
-// }
+function count(list) {
+  if(list === null) {
+    return 0;
+  } else {
+    return 1 + count(list.next);
+  }
+}
 
 
 // The function returns the number of elements in the list.
 // iterative version -> faster and takes less space
-function count(list) {
-  let len = 0;
+// function count(list) {
+//   let len = 0;
+//
+//   while(list !== null) {
+//     len += 1;
+//     list = list.next;
+//   }
+//
+//   return len;
+// }
 
-  while(list !== null){
-    len += 1;
-    list = list.next;
-  }
-
-  return len;
-}
 // Write a function named insertInFront that takes in one argument:
 //   value (a number)
 //   list  (a linked list)
@@ -31,9 +32,15 @@ function count(list) {
 //    insertInFront(1 -> 2 -> 3 -> ., 4) produces 4 -> 1 -> 2 -> 3 -> .
 function insertInFront(value, list) {
   if (list === null) {
-    return { value: value, next: null }
+    return {
+      value,
+      next: null
+    }
   }
-    return { value: value, next: list }
+    return {
+      value,
+      next: list
+    }
 
   return list;
 }

@@ -102,19 +102,19 @@ describe('Part 2', function() {
 
     let mergeSort = require('../../algorithms/sort_algorithms').mergeSort;
 
-    xit('sorts an array of positive numbers', function(){
+    it('sorts an array of positive numbers', function(){
       expect(mergeSort([3.1,4.5,1,2,5])).to.deep.equal([1,2,3.1,4.5,5]);
     });
 
-    xit('sorts an array of negative numbers', function(){
+    it('sorts an array of negative numbers', function(){
       expect(mergeSort([-4,-9,-2,-8,-2,0])).to.deep.equal([-9,-8,-4,-2,-2,0]);
     });
 
-    xit('sorts an array of positive and negative numbers', function(){
+    it('sorts an array of positive and negative numbers', function(){
       expect(mergeSort([-3,4,1,-9,22])).to.deep.equal([-9,-3,1,4,22]);
     });
 
-    xit('works with arrays that are already sorted', function(){
+    it('works with arrays that are already sorted', function(){
       expect(mergeSort([1,2,3,4,5])).to.deep.equal([1,2,3,4,5]);
     });
 
@@ -129,18 +129,18 @@ describe('Part 2', function() {
       arr = [6, 5, 3, 1, 8, 7, 2, 4];
     });
 
-    xit('sets the first element in the pivot, and returns the index of the pivot after positioning other values around it', function() {
+    it('sets the first element in the pivot, and returns the index of the pivot after positioning other values around it', function() {
       expect(partition(arr, 0, 7)).to.equal(5);
       expect(arr.indexOf(6)).to.equal(5);
     });
 
-    xit('partitions the array into two pieces on either side of the pivot', function() {
+    it('partitions the array into two pieces on either side of the pivot', function() {
       partition(arr,0,7);
       expect(arr.slice(0,5).sort()).to.deep.equal([1,2,3,4,5]);
       expect(arr.slice(6).sort()).to.deep.equal([7,8]);
     });
 
-    xit('restricts the partitioning based on left and right parameters', function() {
+    it('restricts the partitioning based on left and right parameters', function() {
       expect(partition(arr,1,6)).to.equal(4);
       expect(arr[0]).to.equal(6);
       expect(arr[7]).to.equal(4);
@@ -154,19 +154,19 @@ describe('Part 2', function() {
 
     let quickSort = require('../../algorithms/sort_algorithms').quickSort;
 
-    xit('sorts an array of positive numbers', function(){
+    it('sorts an array of positive numbers', function(){
       expect(quickSort([3.1,4.5,1,2,5])).to.deep.equal([1,2,3.1,4.5,5]);
     });
 
-    xit('sorts an array of negative numbers', function(){
+    it('sorts an array of negative numbers', function(){
       expect(quickSort([-4,-9,-2,-8,-2,0])).to.deep.equal([-9,-8,-4,-2,-2,0]);
     });
 
-    xit('sorts an array of positive and negative numbers', function(){
+    it('sorts an array of positive and negative numbers', function(){
       expect(quickSort([-3,4,1,-9,22])).to.deep.equal([-9,-3,1,4,22]);
     });
 
-    xit('works with arrays that are already sorted', function(){
+    it('works with arrays that are already sorted', function(){
       expect(quickSort([1,2,3,4,5])).to.deep.equal([1,2,3,4,5]);
     });
 

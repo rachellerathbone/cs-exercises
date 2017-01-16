@@ -16,7 +16,21 @@ const Stack = require('./stack');
 //   checkParens('(adfa(dvb)') -> false
 
 function checkParens(str) {
-  
+  const stack = new Stack;
+
+  for (let i = 0; i < str.length; i++) {
+    if(str[i] === '(') {
+      stack.push('Hello')
+    } else if (str[i] === ')') {
+      stack.pop();
+    }
+  }
+
+  if(stack.length() > 0) {
+    return false;
+  }
+
+  return true;
 }
 
 // Write a function named validate that takes in a string of text
@@ -38,7 +52,21 @@ function checkParens(str) {
 // "}" should return false (no opening curly brace)
 
 function validate(str) {
+  const stack = new Stack;
+  const openers = '({[';
+  const closers = ')}]';
 
+  for(input in str) {
+    if(openers) {
+      stack.push(input)
+    } else if (closers) {
+      if(!stack || openers.index(stack.pop()) !== closers.index(input)) {
+        return false;
+      }
+    }
+  }
+
+  return true;
 }
 
 // Write a function called finalText that takes in an array of commands. A

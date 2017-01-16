@@ -9,14 +9,14 @@ const {
 } = require('../../stacks/problems');
 
 describe("#checkParens", () => {
-  xit('Returns true for correct nesting', () => {
+  it('Returns true for correct nesting', () => {
     expect(checkParens('')).to.be.equal(true);
     expect(checkParens('()')).to.be.equal(true);
     expect(checkParens('(Hello)')).to.be.equal(true);
     expect(checkParens('()()')).to.be.equal(true);
   });
 
-  xit('Returns false for incorrect nesting', () => {
+  it('Returns false for incorrect nesting', () => {
     expect(checkParens('(')).to.be.equal(false);
     expect(checkParens(')(')).to.be.equal(false);
     expect(checkParens('(adfa(dvb)')).to.be.equal(false);
@@ -24,12 +24,12 @@ describe("#checkParens", () => {
 });
 
 describe("#validate", () => {
-  xit('Returns true for correct nesting', () => {
+  it('Returns true for correct nesting', () => {
     expect(validate('')).to.be.equal(true);
     expect(validate('{ [ ] ( ) }')).to.be.equal(true);
   });
 
-  xit('Returns false for incorrect nesting', () => {
+  it('Returns false for incorrect nesting', () => {
     expect(validate('{ [ ( ] ) }')).to.be.equal(false);
     expect(validate('}')).to.be.equal(false);
     expect(validate('{ [ }')).to.be.equal(false);
