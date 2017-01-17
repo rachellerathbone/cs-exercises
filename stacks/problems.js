@@ -52,15 +52,25 @@ function checkParens(str) {
 // "}" should return false (no opening curly brace)
 
 function validate(str) {
-  const stack = new Stack;
-  const openers = '({[';
-  const closers = ')}]';
+  let stack = new Stack;
 
-  for(input in str) {
-    if(openers) {
-      stack.push(input)
-    } else if (closers) {
-      if(!stack || openers.index(stack.pop()) !== closers.index(input)) {
+  let matching = {
+  '{': '}',
+  '[': ']',
+  '(': ')'
+  };
+
+  let closers = {
+    '}': true,
+    ']': true,
+    ')': true
+  };
+
+  for(let i = 0; i < str.length; i ++) {
+    if(matching[str[i]]) {
+      stack.push(str[i])
+    } else if (closers[str[i]]) {
+      if(matching[stack.pop()] !== str[i]) {
         return false;
       }
     }
@@ -115,7 +125,19 @@ function validate(str) {
 //   { command: 'undo' }
 // ]
 function finalText(commands) {
+  let stack = [];
 
+  for(let i = 0; i < commands.length; i++) {
+    if(commands[i].command === 'write') {
+      stack.push(commands[i].text)
+    } else if(commands[i].command === 'undo') {
+      if(stack.length === 0)
+        throw new Error('Error');
+        stack.pop()
+    }
+  }
+
+  return stack.join('');
 }
 
 // Write a function called finalText2 that takes in an array of commands. A
@@ -155,7 +177,24 @@ function finalText(commands) {
 // ]
 // Should throw an error.
 function finalText2(commands) {
+  let stack = [];
+  let redo = [];
 
+  for(let i = 0; i < commands.length; i++) {
+    if(commands[i].command === 'write') {
+      stack.push(commands[i].text)
+    } else if(commands[i].command === 'undo') {
+        if(stack.length === 0)
+          throw new Error('Error');
+          redo.push(stack.pop());
+    } else if (commands[i].command === 'redo') {
+        if(redo.length === 0)
+          throw new Error('Error');
+          stack.push(redo.pop())
+    }
+  }
+
+  return stack.join('');
 }
 
 module.exports = {

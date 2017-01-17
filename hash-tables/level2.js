@@ -116,22 +116,27 @@ It returns TRUE if the words are anagrams of one another and FALSE if it is not.
 */
 
 const isAnagram = (test, original) => {
-  let arr = [];
-
-  for(let i = 0; i < test.length; i++) {
-    const index = test.charCodeAt(i) - 97;
-    arr[index] = (arr[index] || 0) + 1;
+  if(test.split('').sort().join() === original.split('').sort().join()) {
+    return true;
   }
 
-  for(let i = 0; i < original.length; i++) {
-    let index = (original.charCodeAt(i) - 97);
-    if(!arr[index]) {
-      return false;
-    }
-      arr[index]--;
-  }
-
-  return true;
+  return false;
+  // let arr = [];
+  //
+  // for(let i = 0; i < test.length; i++) {
+  //   const index = test.charCodeAt(i) - 97;
+  //   arr[index] = (arr[index] || 0) + 1;
+  // }
+  //
+  // for(let i = 0; i < original.length; i++) {
+  //   const index = (original.charCodeAt(i) - 97);
+  //   if(!arr[index]) {
+  //     return false;
+  //   }
+  //     arr[index]--;
+  // }
+  //
+  // return true;
 }
 
 module.exports = { reverseMerge, mostUsedWord, isAnagram };

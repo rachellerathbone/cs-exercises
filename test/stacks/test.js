@@ -37,7 +37,7 @@ describe("#validate", () => {
 });
 
 describe("#finalText", () => {
-  xit('Returns correct string for correct set of commands', () => {
+  it('Returns correct string for correct set of commands', () => {
     expect(finalText([])).to.be.equal('');
 
     expect(finalText([
@@ -52,7 +52,7 @@ describe("#finalText", () => {
     ])).to.be.equal('Hello');
   });
 
-  xit('Throws an error for too many undos', () => {
+  it('Throws an error for too many undos', () => {
     expect(() => {
       finalText([
         { command: 'write', text: 'Hello' },
@@ -66,7 +66,7 @@ describe("#finalText", () => {
 });
 
 describe("#finalText2", () => {
-  xit('Satisifies the original tests', () => {
+  it('Satisifies the original tests', () => {
     expect(finalText2([])).to.be.equal('');
 
     expect(finalText2([
@@ -91,7 +91,7 @@ describe("#finalText2", () => {
     }).to.throw(Error);
   });
 
-  xit('Returns correct string for correct set of commands', () => {
+  it('Returns correct string for correct set of commands', () => {
     expect(finalText2([
       { command: 'write', text: 'Hello' },
       { command: 'write', text: 'World' },
@@ -108,7 +108,7 @@ describe("#finalText2", () => {
     ])).to.be.equal('Hello');
   });
 
-  xit('Throws an error for too many redos', () => {
+  it('Throws an error for too many redos', () => {
     expect(() => {
       finalText2([
         { command: 'write', text: 'Hello' },
